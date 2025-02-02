@@ -122,7 +122,7 @@ async def Cb_Handle(bot: Client, query: CallbackQuery):
         try:
             c_thumb = await db.get_thumbnail(query.from_user.id)
             # ffmpeg = "-preset veryfast -c:v libx264 -s 1920x1080 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2 -ab 32k -vbr 2 -level 3.1 -threads 5"
-            ffmpeg = "-preset slow -c:v libx265 -vf 'scale=1920:1080:force_original_aspect_ratio=fill' -crf 18 -pix_fmt yuv420p10le -c:a copy -c:s copy -map 0"
+            ffmpeg = "-preset slow -c:v libx265 -vf 'scale=1920:1080' -crf 18 -pix_fmt yuv420p10le -c:a copy -c:s copy -map 0"
             await CompressVideo(bot=bot, query=query, ffmpegcode=ffmpeg, c_thumb=c_thumb)
 
         except Exception as e:
