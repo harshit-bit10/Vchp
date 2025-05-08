@@ -113,7 +113,7 @@ async def Cb_Handle(bot: Client, query: CallbackQuery):
         try:
             c_thumb = await db.get_thumbnail(query.from_user.id)
             # ffmpeg = "-preset veryfast -c:v libx264 -s 1280x720 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -pix_fmt yuv420p -crf 30 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2 -ab 32k -vbr 2 -level 3.1 -threads 5"
-         #   ffmpeg = " -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 10 -tune film -vf 'hqdn3d=1.5:1.5:6:6,unsharp=7:7:1.5,eq=contrast=1.1:saturation=1.05:brightness=0.005' -c:a copy -c:s copy  -metadata title='SharkToonsIndia' -metadata:s:v title='SharkToonsIndia' -metadata:s:a title='SharkToonsIndia' -metadata:s:s title='SharkToonsIndia'"
+         #   ffmpeg = "-map 0 -c:v libx264 -profile:v high -level 4.1 -preset veryslow -crf 14 -tune film -vf "nlmeans=7:7:15:3,unsharp=7:7:1.5,eq=contrast=1.05:brightness=0.01:saturation=1.1" -c:a copy -c:s copy -metadata title='SharkToonsIndia' -metadata:s:v title='SharkToonsIndia' -metadata:s:a title='SharkToonsIndia' -metadata:s:s title='SharkToonsIndia'"
 
             ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 10 -tune film -vf "fspp=strength=7,unsharp=7:7:1.3,eq=contrast=1.1:saturation=1.25:brightness=0.02" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
             
