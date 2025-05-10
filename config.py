@@ -7,14 +7,14 @@ class Config(object):
     # pyro client config
     API_ID    = os.environ.get("API_ID", "7603458")  # ⚠️ Required
     API_HASH  = os.environ.get("API_HASH", "910e420f1f74f40305a684a331dade35") # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7886315471:AAE6VjX6nGQjfjoU4cfdHTopfRJVnhRACIk") # ⚠️ Required
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7886315471:AAHIBMUunYEehYzUpZpUxtfqTnPOEOf36mQ") # ⚠️ Required
     FORCE_SUB = os.environ.get('FORCE_SUB', '-1002075434712') # ⚠️ Required
     AUTH_CHANNEL = int(FORCE_SUB) if FORCE_SUB and id_pattern.search(
     FORCE_SUB) else None
    
     # database config
     DB_URL  = os.environ.get("DB_URL", "mongodb+srv://sharku:zKKosLfBvResoqhF@cluster0.jped6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  # ⚠️ Required
-    DB_NAME  = os.environ.get("DB_NAME","SharkEncoderBot") 
+    DB_NAME  = os.environ.get("DB_NAME","SharkToonsIndiaEncoderBot") 
 
     # Other Configs 
     ADMIN = int(os.environ.get("ADMIN", "6066102279")) # ⚠️ Required
@@ -24,7 +24,7 @@ class Config(object):
 
     # wes response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", True))
-    PORT = int(os.environ.get("PORT", "7093"))
+    PORT = int(os.environ.get("PORT", "7003"))
 
     caption = """
 **File Name**: {0}
