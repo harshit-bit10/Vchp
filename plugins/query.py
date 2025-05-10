@@ -120,7 +120,7 @@ async def Cb_Handle(bot: Client, query: CallbackQuery):
 
             # ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 12 -tune film -vf "hqdn3d=1.5:1.5:6:6,unsharp=5:5:1.0,eq=contrast=1.2:brightness=0.02:saturation=1.3,gamma=1.05" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
 
-            ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 12 -tune film -vf "hqdn3d=1.5:1.5:6:6,unsharp=5:5:1.0,eq=contrast=1.2:brightness=0.05:saturation=2.0" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
+            ffmpeg = ' -map 0 -c:v libx264 -profile:v high -level 4.1 -preset slow -crf 12 -tune film -vf "hqdn3d=1.5:1.5:6:6,unsharp=5:5:1.0,eq=contrast=1.2:brightness=0.04:saturation=1.75" -c:a copy -c:s copy -metadata title="SharkToonsIndia" -metadata:s:v title="SharkToonsIndia" -metadata:s:a title="SharkToonsIndia" -metadata:s:s title="SharkToonsIndia"'
             
             await CompressVideo(bot=bot, query=query, ffmpegcode=ffmpeg, c_thumb=c_thumb)
 
