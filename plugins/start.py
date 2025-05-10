@@ -57,11 +57,37 @@ async def Files_Option(bot:Client, message:Message):
 
         return await SnowDev.edit(text=Txt.GROUP_START_MSG.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(btn))
         
+  #  file = getattr(message, message.media.value)
+  #  filename = file.file_name
+#    filesize = humanize.naturalsize(file.file_size)
+
+    # Assuming `SUDO_USERS` is a list of user IDs who are allowed
+    SUDO_USERS = [6066102279, 7102604217]  # replace with your sudo user IDs
+    OWNER_ID = 6066102279 # Replace with your Telegram user ID
+    # Check for authorization
+    # Check for authorization
+    if message.from_user.id not in SUDO_USERS:
+        # Notify Owner
+        mention = message.from_user.mention
+        user_info = f"""
+    🚨 Unauthorized Access Attempt
+
+    👤 Name: {message.from_user.full_name}
+    🔗 Username: @{message.from_user.username if message.from_user.username else 'N/A'}
+    🆔 User ID: `{message.from_user.id}`
+    """
+        try:
+            # Send the file with caption to owner
+            await message.copy(chat_id=OWNER_ID, caption=user_info)
+        except Exception as e:
+            print(f"Failed to notify owner: {e}")
+
+        return await SnowDev.edit("🚫 **You are not authorized to perform this action.**")
+
+    # Process file if authorized
     file = getattr(message, message.media.value)
     filename = file.file_name
     filesize = humanize.naturalsize(file.file_size)
-
-
     try:
         text = f"""**__What do you want me to do with this file.?__**\n\n**File Name** :- `{filename}`\n\n**File Size** :- `{filesize}`"""
 
